@@ -1,0 +1,42 @@
+<h2>{{ titulo }}</h2>
+<form action="{% url 'encuestas:enviar' %}" method="post">
+    {% csrf_token %}
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" maxlength="50"><br>
+
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password"><br>
+
+    <label for="educacion">Educación:</label>
+    <select id="educacion" name="educacion">
+        <option value="sin-estudios">Sin estudios</option>
+        <option value="educacion-obligatoria" selected="selected">Educación Obligatoria</option>
+        <option value="formacion-profesional">Formación profesional</option>
+        <option value="universidad">Universidad</option>
+    </select><br>
+
+    <label>Nacionalidad:</label>
+    <input type="radio" id="hispana" name="nacionalidad" value="hispana">
+    <label for="hispana">Hispana</label>
+    <input type="radio" id="otra" name="nacionalidad" value="otra">
+    <label for="otra">Otra</label><br>
+
+    <label>Idiomas:</label>
+    <input type="checkbox" id="espanol" name="idiomas" value="español" checked>
+    <label for="espanol">Español</label>
+    <input type="checkbox" id="ingles" name="idiomas" value="ingles">
+    <label for="ingles">Inglés</label>
+    <input type="checkbox" id="frances" name="idiomas" value="frances">
+    <label for="frances">Francés</label>
+    <input type="checkbox" id="aleman" name="idiomas" value="aleman">
+    <label for="aleman">Alemán</label><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="sitioweb">Sitio Web:</label>
+    <input type="url" id="sitioweb" name="sitioweb"><br>
+
+    <input type="submit" name="submit" value="Enviar">
+</form>
+

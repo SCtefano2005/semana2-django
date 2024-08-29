@@ -1,0 +1,14 @@
+<h2>{{ titulo }}</h2>
+<p>Nombre: {{ nombre }}</p>
+<p>Contraseña: {{ password }}</p>
+<p>Educación: {{ educacion }}</p>
+<p>Nacionalidad: {{ nacionalidad }}</p>
+<p>Idiomas:</p>
+<ul>
+    {% for item in Idiomas %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+<p>Email: {{ email }}</p>
+<p>Sitio
+ Web: {{ website }}</p>
