@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from datetime import date
-
 def calculo(cumpleaños):
     presente = date.today()
     edad = presente.year - cumpleaños.year - ((presente.month, presente.day) < (cumpleaños.month, cumpleaños.day))
@@ -22,8 +21,7 @@ def calculo(cumpleaños):
     ('Sagitario', (12, 21)),   
     ('Capricornio', (12, 31))  
     ]
-
-
+    
     def buscar(index=0):
         sign, (month, day) = signos_zodiaco[index]
         C_M_D = (cumpleaños.month, cumpleaños.day)
@@ -34,8 +32,7 @@ def calculo(cumpleaños):
             return buscar(index + 1)
         else:
             return 'Capricornio'
-        
-        
+              
     signo_zodiaco = buscar()
     return edad, signo_zodiaco
 
@@ -50,5 +47,4 @@ def form(request):
             'signozodiac': signo_zodiaco,
         }
         return render(request, 'formulario/formulario.html', context)
-    
     return render(request, 'formulario/formulario.html')
